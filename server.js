@@ -8,4 +8,9 @@ app.use(express.json())
 
 app.use(require('./routes'))
 
+
+app.get('/saved', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'saved.html'))
+})
+
 require('./db').connect(() => app.listen(3000))

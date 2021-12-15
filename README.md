@@ -1,3 +1,0 @@
-# GiphyApp
-
-added changes

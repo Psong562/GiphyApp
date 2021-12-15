@@ -10,6 +10,7 @@
 <body>
   
 <h1>Giphy App</h1>
+<a href="/saved">Saved </a>
 <form >
   <p>
     <label for="searchInfo">Giphy Search</label>
@@ -33,6 +34,7 @@
 
 document.getElementById(`search`).addEventListener(`click`, event => {
   event.preventDefault()
+  document.getElementById('results').innerHTML = ''
 const searchInfo = document.getElementById(`searchInfo`).value
   
   axios.get(`https://api.giphy.com/v1/gifs/search?api_key=SEbetDBYUUNzz7v45m9I5C6kheL9yDvM&q=${searchInfo}&limit=25&offset=0&rating=g&lang=en

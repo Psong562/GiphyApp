@@ -18,12 +18,20 @@ router.post('/giphy', (req, res) => {
   })
 })
 
-// router.put('/giphy/:id', (req, res) => {
-//   db.query('UPDATE giphy SET ? Where ?', [req.body, { id: req.params.id }], err => {
-//     if (err) { console.log(err) }
-//     res.sendStatus(200)
-//   })
-// })
+router.put('/giphy/:id', (req, res) => {
+  db.query('UPDATE giphy SET ? Where ?', [req.body, { id: req.params.id }], err => {
+    if (err) { console.log(err) }
+    res.sendStatus(200)
+  })
+})
+
+router.delete('/giphy/:id', (req, res) => {
+  db.query('DELETE FROM giphy Where ?', { id: req.params.id }, err => {
+    if (err) { console.log(err) }
+    res.sendStatus(200)
+  })
+})
+
 
 
 module.exports = router
